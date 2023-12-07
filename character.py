@@ -221,22 +221,21 @@ class Character(QMainWindow):
             results = self.cur.execute(f'''SELECT * FROM characters
                                             WHERE character_name = "{current_pers}"''').fetchall()[0]
 
-            for i, col in enumerate(CHARACTER_COLUMN):
+            for i, rez in enumerate(results):
                 widget = self.all_widgets[i]
                 typ = widget.metaObject().className()
-                print(typ, widget, results[i])
                 if typ == 'QLineEdit':
-                    widget.setText(results[i])
+                    widget.setText(rez)
                 elif typ == 'QSpinBox':
-                    widget.setValue(int(results[i]))
+                    widget.setValue(int(rez))
                 elif typ == 'QComboBox':
                     pass
                 elif typ == 'QLabel':
-                    widget.setText(results[i])
+                    widget.setText(rez)
                 elif typ == 'QPlainTextEdit':
-                    widget.setPlainText(results[i])
+                    widget.setPlainText(rez)
                 elif typ == 'QCheckBox':
-                    widget.setChecked(bool(results[i]))
+                    widget.setChecked(bool(rez))
         except Exception as e:
             print(e)
 
