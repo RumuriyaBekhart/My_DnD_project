@@ -131,7 +131,7 @@ class Character(QMainWindow):
 
         for i in name:
             if i not in AllItems:
-                self.pers.addItem(i[0])    # str()
+                self.pers.addItem(i[0])  # str()
 
     def money(self):
         '''Изменение количества монет'''
@@ -197,6 +197,30 @@ class Character(QMainWindow):
 
     def load(self):
         '''Загрузить лист уже существующего персонажа [в выподающем меню]'''
+        try:
+            current_pers = self.pers.currentText()
+
+            results = self.cur.execute(f'''SELECT * FROM characters
+                                            WHERE character_name = "{current_pers}"''').fetchall()[0]
+
+            for i, col in enumerate(CHARACTER_COLUMN):
+                widget = self.all_widgets[i]
+                typ = widget.metaObject().className()
+                print(typ, widget, results[i])
+                if typ == 'QLineEdit':
+                    widget.setText(results[i])
+                elif typ == 'QSpinBox':
+                    widget.setValue(int(results[i]))
+                elif typ == 'QComboBox':
+                    pass
+                elif typ == 'QLabel':
+                    widget.setText(results[i])
+                elif typ == 'QPlainTextEdit':
+                    widget.setPlainText(results[i])
+                elif typ == 'QCheckBox':
+                    widget.setChecked(bool(results[i]))
+        except Exception as e:
+            print(e)
 
     def delete(self):
         '''Удаление персонажа при нажатии кнопки [Удалить]'''
