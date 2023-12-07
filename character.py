@@ -20,7 +20,7 @@ class Character(QMainWindow):
         self.pixmap = QPixmap(self.filename)
         self.photo.setPixmap(self.pixmap)
 
-        # Загрузка всех параметров из таблицы [characters] в форму
+        # Список всех полей для работы с базой данных
         self.all_widgets = (self.character_name,
                             self.EXP,
                             self.LVL,
@@ -97,17 +97,22 @@ class Character(QMainWindow):
 
         self.saved_pers()
 
-        self.pers.currentTextChanged.connect(self.load)  # Выбор персонажа из выпадающего списка [pers]
+        # Выбор персонажа из выпадающего списка [pers]
+        self.pers.currentTextChanged.connect(self.load)
 
         # Принудительное обновление списка персонажей
-        self.btn_refresh_pers_list.clicked.connect(self.refresh_pers_list)
+        self.btn_refresh_pers_list.clicked.connect(self.saved_pers)
 
+        # Кнопки для работы с изображениями
         self.load_img_btn.clicked.connect(self.img_load)
         self.delite_img_btn.clicked.connect(self.img_delite)
+
+        # Стандартные кнопки [Сохранить] [Удалить] [Очистить]
         self.btn_clean.clicked.connect(self.clean)
         self.btn_delite.clicked.connect(self.delete)
         self.btn_save.clicked.connect(self.save)
 
+        # Денежные кнопки
         self.copper_plus.clicked.connect(self.money)
         self.copper_minus.clicked.connect(self.money)
         self.silver_plus.clicked.connect(self.money)
