@@ -127,11 +127,11 @@ class Character(QMainWindow):
     def saved_pers(self):
         '''Добавление в выпадающий список существующих персонажей всех персонажей из таблицы [characters]'''
         AllItems = [self.pers.itemText(i) for i in range(self.pers.count())]
-        name = self.cur.execute("SELECT character_name FROM characters").fetchall()
+        name = self.cur.execute("SELECT character_name FROM characters").fetchall()[0]
 
         for i in name:
             if i not in AllItems:
-                self.pers.addItem(i[0])  # str()
+                self.pers.addItem(str(i))  # str()
 
     def money(self):
         '''Изменение количества монет'''
@@ -253,6 +253,10 @@ class Character(QMainWindow):
         '''Сохранение персонажа при нажатии кнопки [Сохранить]'''
         try:
             name = self.character_name.text()
+            if name not in self.cur.execute("SELECT character_name FROM characters").fetchall()[0]:
+                self.cur.execute(f'''INSERT INTO characters (character_name) VALUES ('{self.character_name.text()}')''')
+                self.con.commit()
+
             for i, col in enumerate(CHARACTER_COLUMN):
                 widget = self.all_widgets[i]
                 typ = widget.metaObject().className()
