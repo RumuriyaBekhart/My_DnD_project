@@ -194,6 +194,24 @@ class Character(QMainWindow):
 
     def clean(self):
         '''Очистить лист по кнопке [Очистить]'''
+        try:
+            for i, walue in enumerate(ZERO_PERS):
+                widget = self.all_widgets[i]
+                typ = widget.metaObject().className()
+                if typ == 'QLineEdit':
+                    widget.setText(walue)
+                elif typ == 'QSpinBox':
+                    widget.setValue(int(walue))
+                elif typ == 'QComboBox':
+                    pass
+                elif typ == 'QLabel':
+                    widget.setText(walue)
+                elif typ == 'QPlainTextEdit':
+                    widget.setPlainText(walue)
+                elif typ == 'QCheckBox':
+                    widget.setChecked(bool(walue))
+        except Exception as e:
+            print(e)
 
     def load(self):
         '''Загрузить лист уже существующего персонажа [в выподающем меню]'''
