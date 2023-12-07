@@ -190,6 +190,11 @@ class Character(QMainWindow):
     def img_start(self):
         self.filename = 'images/ava.png'
 
+    def true_false(self, string):
+        if string == 'False':
+            return False
+        return True
+
     def clean(self):
         '''Очистить лист по кнопке [Очистить]'''
         try:
@@ -203,11 +208,12 @@ class Character(QMainWindow):
                 elif typ == 'QComboBox':
                     widget.setCurrentIndex(int(value))    # setItemData
                 elif typ == 'QLabel':
+                    self.filename = value
                     self.img_load()
                 elif typ == 'QPlainTextEdit':
                     widget.setPlainText(value)
                 elif typ == 'QCheckBox':
-                    widget.setChecked(bool(value))
+                    widget.setChecked(self.true_false(value))
         except Exception as e:
             print(e)
 
@@ -229,11 +235,12 @@ class Character(QMainWindow):
                 elif typ == 'QComboBox':
                     widget.setCurrentIndex(int(rez))
                 elif typ == 'QLabel':
+                    self.filename = rez
                     self.img_load()
                 elif typ == 'QPlainTextEdit':
                     widget.setPlainText(rez)
                 elif typ == 'QCheckBox':
-                    widget.setChecked(bool(rez))
+                    widget.setChecked(self.true_false(rez))
         except Exception as e:
             print(e)
 
@@ -251,7 +258,7 @@ class Character(QMainWindow):
         '''Сохранение персонажа при нажатии кнопки [Сохранить]'''
         try:
             name = self.character_name.text()
-            all_names = list(self.cur.execute("SELECT character_name FROM characters").fetchall()[0])
+            all_names = list(self.cur.execute("SELECT character_name FROM characters").fetchall())
             if (name,) not in all_names:
                 self.cur.execute(f'''INSERT INTO characters (character_name) VALUES ('{self.character_name.text()}')''')
                 self.con.commit()
