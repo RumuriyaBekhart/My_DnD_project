@@ -4,6 +4,8 @@ from PyQt5 import uic, QtCore
 from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog  # QMetaObject
 from PyQt5.QtGui import QPixmap
 
+from const import CHARACTER_COLUMN, ZERO_PERS
+
 
 class Character(QMainWindow):
     def __init__(self):
@@ -189,3 +191,15 @@ class Character(QMainWindow):
 
     def img_start(self):
         self.filename = 'images/ava.png'
+
+    def clean(self):
+        '''Очистить лист по кнопке [Очистить]'''
+
+    def load(self):
+        '''Загрузить лист уже существующего персонажа [в выподающем меню]'''
+
+    def delete(self):
+        '''Удаление персонажа при нажатии кнопки [Удалить]'''
+
+    def save(self):
+        '''Сохранение персонажа при нажатии кнопки [Сохранить]'''
