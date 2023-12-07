@@ -195,21 +195,21 @@ class Character(QMainWindow):
     def clean(self):
         '''Очистить лист по кнопке [Очистить]'''
         try:
-            for i, walue in enumerate(ZERO_PERS):
+            for i, value in enumerate(ZERO_PERS):
                 widget = self.all_widgets[i]
                 typ = widget.metaObject().className()
                 if typ == 'QLineEdit':
-                    widget.setText(walue)
+                    widget.setText(value)
                 elif typ == 'QSpinBox':
-                    widget.setValue(int(walue))
+                    widget.setValue(int(value))
                 elif typ == 'QComboBox':
                     pass
                 elif typ == 'QLabel':
-                    widget.setText(walue)
+                    widget.setText(value)
                 elif typ == 'QPlainTextEdit':
-                    widget.setPlainText(walue)
+                    widget.setPlainText(value)
                 elif typ == 'QCheckBox':
-                    widget.setChecked(bool(walue))
+                    widget.setChecked(bool(value))
         except Exception as e:
             print(e)
 
@@ -251,3 +251,36 @@ class Character(QMainWindow):
 
     def save(self):
         '''Сохранение персонажа при нажатии кнопки [Сохранить]'''
+        try:
+            name = self.character_name.text()
+            for i, col in enumerate(CHARACTER_COLUMN):
+                widget = self.all_widgets[i]
+                typ = widget.metaObject().className()
+                if typ == 'QLineEdit':
+                    self.cur.execute(f'''UPDATE characters
+                                    SET {col} = "{str(widget.text())}"
+                                    WHERE character_name = "{name}"''')
+                elif typ == 'QSpinBox':
+                    self.cur.execute(f'''UPDATE characters
+                                        SET {col} = "{str(widget.value())}"
+                                        WHERE character_name = "{name}"''')
+                elif typ == 'QComboBox':
+                    self.cur.execute(f'''UPDATE characters
+                                        SET {col} = "{str(widget.currentText())}"
+                                        WHERE character_name = "{name}"''')
+                elif typ == 'QLabel':
+                    self.cur.execute(f'''UPDATE characters
+                                        SET {col} = "{self.filename}"
+                                        WHERE character_name = "{name}"''')
+                elif typ == 'QPlainTextEdit':
+                    self.cur.execute(f'''UPDATE characters
+                                        SET {col} = "{str(widget.toPlainText())}"
+                                        WHERE character_name = "{name}"''')
+                elif typ == 'QCheckBox':
+                    self.cur.execute(f'''UPDATE characters
+                                        SET {col} = "{str(widget.isChecked())}"
+                                        WHERE character_name = "{name}"''')
+
+                self.con.commit()
+        except Exception as e:
+            print(e)
