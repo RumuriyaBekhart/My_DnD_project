@@ -200,6 +200,13 @@ class Character(QMainWindow):
 
     def delete(self):
         '''Удаление персонажа при нажатии кнопки [Удалить]'''
+        self.cur.execute(f'''DELETE from characters
+                    WHERE character_name = "{self.character_name.text()}"''')
+
+        self.con.commit()
+
+        self.clean()
+        self.saved_pers()
 
     def save(self):
         '''Сохранение персонажа при нажатии кнопки [Сохранить]'''
