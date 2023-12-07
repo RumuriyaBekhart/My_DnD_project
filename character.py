@@ -104,7 +104,7 @@ class Character(QMainWindow):
         self.btn_refresh_pers_list.clicked.connect(self.saved_pers)
 
         # Кнопки для работы с изображениями
-        self.load_img_btn.clicked.connect(self.img_load)
+        self.load_img_btn.clicked.connect(self.img_choice)
         self.delite_img_btn.clicked.connect(self.img_delite)
 
         # Стандартные кнопки [Сохранить] [Удалить] [Очистить]
@@ -166,3 +166,26 @@ class Character(QMainWindow):
             a = int(self.money_platinum.text()) - int(self.append_money_platinum.text())
             self.money_platinum.setText(str(a))
             self.append_money_platinum.setText('0')
+
+    def img_choice(self):
+        '''Выбор изображение персонажа при нажатии кнопки [загрузить изображение]'''
+        self.filename = QFileDialog.getOpenFileName(self, 'Выбрать картинку', '/images',
+                                                    'Картинка (*.jpg);;Картинка (*.png);;Все файлы (*)')[0]
+        self.img_load()
+
+    def img_load(self):
+        pixmap = QPixmap(self.filename)
+
+        # масштабирование изображения под размер 171*171
+        pixmap_scaled = pixmap.scaled(171, 171, QtCore.Qt.KeepAspectRatio)
+
+        self.photo.setPixmap(pixmap_scaled)
+
+    def img_delite(self):
+        '''Заменить текущее изображение персонажа при нажатии кнопки [удалить изображение] на
+        аватарку по умолчанию'''
+        self.img_start()
+        self.img_load()
+
+    def img_start(self):
+        self.filename = 'images/ava.png'
