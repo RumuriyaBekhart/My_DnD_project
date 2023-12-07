@@ -1,0 +1,2184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1126</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	color: white;
+	background-color: #121212;
+	font-family: Rubik;
+	font-size: 12;
+	font-weight: 600;
+}
+
+QPushButton {
+	background-color: #666;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="photo">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>171</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(156, 156, 156);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="power_0">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>250</y>
+      <width>191</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">gridline-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>СИЛА</string>
+    </property>
+    <widget class="QCheckBox" name="power_savingroll">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>спасбросок</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="power">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>0</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="athletics">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>атлетика</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="power_savingroll_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>30</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="athletics_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>60</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="power_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>191</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">gridline-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>ЛОВКОСТЬ</string>
+    </property>
+    <widget class="QCheckBox" name="dexterity_savingroll">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>спасбросок</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="dexterity">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>0</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="acrobatics">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>акробатика</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="prestidigitation">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ловкость рук</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="dexterity_savingroll_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>30</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="acrobatics_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>60</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="prestidigitation_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>90</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="secrecy">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>скрытность</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="secrecy_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>120</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="power_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>530</y>
+      <width>191</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">gridline-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>ИНТЕЛЛЕКТ</string>
+    </property>
+    <widget class="QCheckBox" name="intellect_savingroll">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>спасбросок</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="intelligence">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>0</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="magic">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>магия</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="history">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>история</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="intellect_savingroll_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>30</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="magic_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>60</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="history_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>90</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="analysis">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>анализ</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="analysis_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>120</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="nature_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>150</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="nature">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>природа</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="religion_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>180</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="religion">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>180</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>религия</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="power_4">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>530</y>
+      <width>191</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">gridline-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>МУДРОСТЬ</string>
+    </property>
+    <widget class="QCheckBox" name="wisdom_savingroll">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>спасбросок</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="wisdom">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>0</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="animal_care">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>уход за животными</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="insight">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>проницательность</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="wisdom_savingroll_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>30</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="animal_care_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>60</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="insight_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>90</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="medicine">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>медицина</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="medicine_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>120</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="attention_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>150</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="attention">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>внимательность</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="survival_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>180</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="survival">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>180</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>выживание</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="power_5">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>330</y>
+      <width>191</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">gridline-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>ХАРИЗМА</string>
+    </property>
+    <widget class="QCheckBox" name="charisma_savingroll">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>спасбросок</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="charisma">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>0</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="deceit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>обман</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="intimidation">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>запугивание</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="charisma_savingroll_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>30</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="deceit_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>60</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="intimidation_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>90</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="performance">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>выступление</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="performance_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>120</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="belief_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>150</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="belief">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>убеждение</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="power_6">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>250</y>
+      <width>191</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">gridline-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>ТЕЛОСЛОЖЕНИЕ</string>
+    </property>
+    <widget class="QCheckBox" name="body_savingroll">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>спасбросок</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="body">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>0</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="body_savingroll_num">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>30</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>70</y>
+      <width>307</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Имя:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Класс:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Расса:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Мировоззрение:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="character_name"/>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="character_history">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="character_class">
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Бард</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Варвар</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Воин</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Волшебник</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Друид</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Жрец</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Изобретатель</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Колдун</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Монах</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Паладин</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Плут</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Следопыт</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Чародей</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="race">
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ааракокра</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аасимар</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Автогном</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Багбир</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ведалкен</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Вердан</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Гибрид Симиков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Гит</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Гифф</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Гном</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Гоблин</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Голиаф</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Грунг</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Дварф</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Дженази</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Драконорождённый</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Изменяющиеся</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Калаштар</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Кендер</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Кенку</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Кентавр</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Кобольд</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Кованый</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Леонин</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Локата</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Локсодон</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Людоящер</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Минотавр</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Орк</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Плазмоид</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Полуорк</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Полурослик</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Полуэльф</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Сатир</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Совлин</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Табакси</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Тифлинг</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Тортл</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Три-крин</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Тритон</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Фирболг</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Фэйри</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Хадози</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Харенгон</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Хобгоблин</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Человек</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Шифтер</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Эльф</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Эльф (Астральный)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Юань-ти</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="zz">
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Законно Добрый</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Законно Нейтральный</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Законно Злой</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Нейтрально Добрый</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Истенно Нейтральный</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Нейтрально Злой</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Хаотично Добрый</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Хаотично Нейтральный</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Хаотично Злой</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Предистория:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Уровень:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QSpinBox" name="LVL"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Опыт:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QSpinBox" name="EXP"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="load_img_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>171</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>загрузить изображение</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delite_img_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>171</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>удалить изображение</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_save">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>730</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Сохранить</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>580</y>
+      <width>211</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ПРОЧИЕ ВЛАДЕНИЯ И ЯЗЫКИ</string>
+    </property>
+    <widget class="QPlainTextEdit" name="language">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>191</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rubik</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>370</y>
+      <width>181</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ДЕНЬГИ</string>
+    </property>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>161</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>медные монеты</string>
+     </property>
+     <widget class="QLineEdit" name="money_copper">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="append_money_copper">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="copper_plus">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>50</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="copper_minus">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>50</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>161</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>серебряные монеты</string>
+     </property>
+     <widget class="QLineEdit" name="money_silver">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="append_money_silver">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="silver_plus">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>50</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="silver_minus">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>50</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>161</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>золотые монеты</string>
+     </property>
+     <widget class="QLineEdit" name="money_gold">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="append_money_gold">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gold_plus">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>50</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gold_minus">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>50</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>290</y>
+       <width>161</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>платиновые монеты</string>
+     </property>
+     <widget class="QLineEdit" name="money_platinum">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="append_money_platinum">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="platinum_plus">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>50</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="platinum_minus">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>50</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_7">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>370</y>
+      <width>211</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ОРУЖИЕ, АТАКИ И СПОСОБНОСТИ</string>
+    </property>
+    <widget class="QPlainTextEdit" name="atacs">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>191</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rubik</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_8">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>370</y>
+      <width>291</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ИСТОРИЯ ПЕРСОНАЖА</string>
+    </property>
+    <widget class="QPlainTextEdit" name="main_history">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>271</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rubik</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_9">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>0</y>
+      <width>91</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ЗДОРОВЬЕ</string>
+    </property>
+    <widget class="QLineEdit" name="HP">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rubik</family>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_10">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>0</y>
+      <width>91</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ЗАЩИТА</string>
+    </property>
+    <widget class="QLineEdit" name="DEF">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rubik</family>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_11">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>0</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ИНИЦИАТИВА</string>
+    </property>
+    <widget class="QLineEdit" name="lineEdit_63">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>81</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rubik</family>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_12">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>80</y>
+      <width>301</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>СОСТОЯНИЕ ПЕРСОНАЖА</string>
+    </property>
+    <widget class="QPlainTextEdit" name="character_state">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>281</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rubik</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="plainText">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_13">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>0</y>
+      <width>291</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ИНВЕНТАРЬ</string>
+    </property>
+    <widget class="QPlainTextEdit" name="inventory">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>271</width>
+       <height>331</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rubik</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="plainText">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btn_delite">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>730</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Удалить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_clean">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>730</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Очистить</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_14">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>210</y>
+      <width>211</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ДОСТУПНЫЕ ОЧКИ НАВЫКОВ</string>
+    </property>
+    <widget class="QLineEdit" name="lineEdit_65">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>50</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>62</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>171</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Рекомендованный набор&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_66">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>110</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>8</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_67">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>110</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>10</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_68">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>110</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>12</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_69">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>110</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>13</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_70">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>110</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>14</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_71">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>110</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>15</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>171</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Очки характиристик&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QComboBox" name="pers">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>35</y>
+      <width>271</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 167, 0);</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_refresh_pers_list">
+    <property name="geometry">
+     <rect>
+      <x>472</x>
+      <y>35</y>
+      <width>25</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 167, 0);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>⭯</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>10</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Выбери персонажа</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
