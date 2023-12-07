@@ -203,7 +203,7 @@ class Character(QMainWindow):
                 elif typ == 'QSpinBox':
                     widget.setValue(int(value))
                 elif typ == 'QComboBox':
-                    pass
+                    widget.setItemData(int(value))    # setItemData
                 elif typ == 'QLabel':
                     widget.setText(value)
                 elif typ == 'QPlainTextEdit':
@@ -229,7 +229,7 @@ class Character(QMainWindow):
                 elif typ == 'QSpinBox':
                     widget.setValue(int(rez))
                 elif typ == 'QComboBox':
-                    pass
+                    widget.setItemData(int(rez))
                 elif typ == 'QLabel':
                     widget.setText(rez)
                 elif typ == 'QPlainTextEdit':
