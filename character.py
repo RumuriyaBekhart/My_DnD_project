@@ -130,3 +130,39 @@ class Character(QMainWindow):
         for i in name:
             if i not in AllItems:
                 self.pers.addItem(i[0])    # str()
+
+    def money(self):
+        '''Изменение количества монет'''
+        btn = QApplication.instance().sender()
+        if btn == self.copper_plus:
+            a = int(self.money_copper.text()) + int(self.append_money_copper.text())
+            self.money_copper.setText(str(a))
+            self.append_money_copper.setText('0')
+        elif btn == self.copper_minus:
+            a = int(self.money_copper.text()) - int(self.append_money_copper.text())
+            self.money_copper.setText(str(a))
+            self.append_money_copper.setText('0')
+        elif btn == self.silver_plus:
+            a = int(self.money_silver.text()) + int(self.append_money_silver.text())
+            self.money_silver.setText(str(a))
+            self.append_money_silver.setText('0')
+        elif btn == self.silver_minus:
+            a = int(self.money_silver.text()) - int(self.append_money_silver.text())
+            self.money_silver.setText(str(a))
+            self.append_money_silver.setText('0')
+        elif btn == self.gold_plus:
+            a = int(self.money_gold.text()) + int(self.append_money_gold.text())
+            self.money_gold.setText(str(a))
+            self.append_money_gold.setText('0')
+        elif btn == self.gold_minus:
+            a = int(self.money_gold.text()) - int(self.append_money_gold.text())
+            self.money_gold.setText(str(a))
+            self.append_money_gold.setText('0')
+        elif btn == self.platinum_plus:
+            a = int(self.money_platinum.text()) + int(self.append_money_platinum.text())
+            self.money_platinum.setText(str(a))
+            self.append_money_platinum.setText('0')
+        elif btn == self.platinum_minus:
+            a = int(self.money_platinum.text()) - int(self.append_money_platinum.text())
+            self.money_platinum.setText(str(a))
+            self.append_money_platinum.setText('0')
