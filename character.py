@@ -126,12 +126,10 @@ class Character(QMainWindow):
 
     def saved_pers(self):
         '''Добавление в выпадающий список существующих персонажей всех персонажей из таблицы [characters]'''
-        AllItems = [self.pers.itemText(i) for i in range(self.pers.count())]
-        name = self.cur.execute("SELECT character_name FROM characters").fetchall()[0]
-
+        name = list(self.cur.execute("SELECT character_name FROM characters").fetchall())
+        self.pers.clear()
         for i in name:
-            if i not in AllItems:
-                self.pers.addItem(str(i))  # str()
+            self.pers.addItem(i[0])  # str()
 
     def money(self):
         '''Изменение количества монет'''
@@ -203,9 +201,9 @@ class Character(QMainWindow):
                 elif typ == 'QSpinBox':
                     widget.setValue(int(value))
                 elif typ == 'QComboBox':
-                    widget.setItemData(int(value))    # setItemData
+                    widget.setCurrentIndex(int(value))    # setItemData
                 elif typ == 'QLabel':
-                    widget.setText(value)
+                    self.img_load()
                 elif typ == 'QPlainTextEdit':
                     widget.setPlainText(value)
                 elif typ == 'QCheckBox':
@@ -229,9 +227,9 @@ class Character(QMainWindow):
                 elif typ == 'QSpinBox':
                     widget.setValue(int(rez))
                 elif typ == 'QComboBox':
-                    widget.setItemData(int(rez))
+                    widget.setCurrentIndex(int(rez))
                 elif typ == 'QLabel':
-                    widget.setText(rez)
+                    self.img_load()
                 elif typ == 'QPlainTextEdit':
                     widget.setPlainText(rez)
                 elif typ == 'QCheckBox':
@@ -253,7 +251,8 @@ class Character(QMainWindow):
         '''Сохранение персонажа при нажатии кнопки [Сохранить]'''
         try:
             name = self.character_name.text()
-            if name not in self.cur.execute("SELECT character_name FROM characters").fetchall()[0]:
+            all_names = list(self.cur.execute("SELECT character_name FROM characters").fetchall()[0])
+            if (name,) not in all_names:
                 self.cur.execute(f'''INSERT INTO characters (character_name) VALUES ('{self.character_name.text()}')''')
                 self.con.commit()
 
@@ -269,8 +268,9 @@ class Character(QMainWindow):
                                         SET {col} = "{str(widget.value())}"
                                         WHERE character_name = "{name}"''')
                 elif typ == 'QComboBox':
+                    AllItems = [widget.itemText(i) for i in range(widget.count())]
                     self.cur.execute(f'''UPDATE characters
-                                        SET {col} = "{str(widget.currentText())}"
+                                        SET {col} = "{str(AllItems.index(widget.currentText()))}"
                                         WHERE character_name = "{name}"''')
                 elif typ == 'QLabel':
                     self.cur.execute(f'''UPDATE characters
