@@ -1291,7 +1291,11 @@ QPushButton {
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QSpinBox" name="LVL"/>
+      <widget class="QSpinBox" name="LVL">
+       <property name="maximum">
+        <number>1000000000</number>
+       </property>
+      </widget>
      </item>
      <item row="6" column="0">
       <widget class="QLabel" name="label_11">
@@ -1301,7 +1305,11 @@ QPushButton {
       </widget>
      </item>
      <item row="6" column="1">
-      <widget class="QSpinBox" name="EXP"/>
+      <widget class="QSpinBox" name="EXP">
+       <property name="maximum">
+        <number>1000000000</number>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
